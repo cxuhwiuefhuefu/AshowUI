@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('./src/iconfont.woff') format('woff'),
+        url('./src/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+}
+
+[class*='as-icon-'] { // 属性选择器 只要你的类名包含这个'as-icon-'
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.as-icon-xihuan:before {
+  content: "\e742";
+}
+
+.as-icon-tubiao:before {
+  content: "\e608";
+}
+
+.as-icon-tubiao1:before {
+  content: "\e609";
+}
+
+.as-icon-sanjiaoxing:before {
+  content: "\e6bd";
+}
+
+.as-icon-jiantouxiangxia:before {
+  content: "\e615";
+}
+
+.as-icon-as-icon:before {
+  content: "\e656";
+}
+
+.as-icon-kaifazhezhongxin:before {
+  content: "\e7c2";
+}
+
+.as-icon-APPkaifa:before {
+  content: "\ec23";
+}
+

@@ -1,0 +1,69 @@
+<template>
+  <div id="app">
+    <div class="row">
+      <as-button>按钮</as-button>
+      <as-button type="primary">按钮</as-button>
+      <as-button type="success">按钮</as-button>
+      <as-button type="info">按钮</as-button>
+      <as-button type="warning">按钮</as-button>
+      <as-button type="danger">按钮</as-button>
+    </div>
+
+    <div class="row">
+      <as-button plain>按钮</as-button>
+      <as-button plain type="primary">按钮</as-button>
+      <as-button plain type="success">按钮</as-button>
+      <as-button plain type="info">按钮</as-button>
+      <as-button plain type="warning">按钮</as-button>
+      <as-button plain type="danger">按钮</as-button>
+    </div>
+
+    <div class="row">
+      <as-button plain round>按钮</as-button>
+      <as-button plain round type="primary">按钮</as-button>
+      <as-button plain round type="success">按钮</as-button>
+      <as-button plain round type="info">按钮</as-button>
+      <as-button plain round type="warning">按钮</as-button>
+      <as-button plain round type="danger">按钮</as-button>
+    </div>
+
+    <div class="row">
+      <as-button plain circle>拆</as-button>
+      <as-button plain circle type="primary">拆</as-button>
+      <as-button plain circle type="success">拆</as-button>
+      <as-button plain circle type="info">拆</as-button>
+      <as-button plain circle type="warning">拆</as-button>
+      <as-button plain circle type="danger">拆</as-button>
+    </div>
+
+     <div class="row">
+      <as-button plain icon="as-icon-delete" circle></as-button>
+      <as-button plain icon="as-icon-delete" circle type="primary"></as-button>
+      <as-button plain icon="as-icon-delete" circle type="success"></as-button>
+      <as-button plain icon="as-icon-delete" circle type="info"></as-button>
+      <as-button plain icon="as-icon-delete" circle type="warning"></as-button>
+      <as-button plain icon="as-icon-delete" circle type="danger"></as-button>
+    </div>
+  </div>
+</template>
+
+<script>
+
+export default {
+
+}
+</script>
+
+
+
+<style lang="scss" scoped>
+
+.row {
+  margin-bottom: 20px;
+  .as-button {
+    margin-right: 20px;  
+  }
+}
+
+
+</style>
