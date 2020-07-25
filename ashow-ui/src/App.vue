@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    
     <div class="row">
       <as-button>按钮</as-button>
       <as-button type="primary">按钮</as-button>
@@ -19,7 +20,7 @@
     </div>
 
     <div class="row">
-      <as-button plain round>按钮</as-button>
+      <as-button icon="search" plain round>按钮</as-button>
       <as-button plain round type="primary">按钮</as-button>
       <as-button plain round type="success">按钮</as-button>
       <as-button plain round type="info">按钮</as-button>
@@ -37,12 +38,21 @@
     </div>
 
      <div class="row">
-      <as-button plain icon="as-icon-delete" circle></as-button>
-      <as-button plain icon="as-icon-delete" circle type="primary"></as-button>
-      <as-button plain icon="as-icon-delete" circle type="success"></as-button>
-      <as-button plain icon="as-icon-delete" circle type="info"></as-button>
-      <as-button plain icon="as-icon-delete" circle type="warning"></as-button>
-      <as-button plain icon="as-icon-delete" circle type="danger"></as-button>
+      <as-button @click="aclick" plain icon="search" circle></as-button>
+      <as-button plain icon="edit" circle type="primary"></as-button>
+      <as-button plain icon="check" circle type="success"></as-button>
+      <as-button plain icon="message" circle type="info"></as-button>
+      <as-button plain icon="delete" circle type="warning"></as-button>
+      <as-button plain icon="delete" circle type="danger"></as-button>
+    </div>
+
+    <div class="row">
+      <as-button disabled>按钮</as-button>
+      <as-button disabled type="primary">按钮</as-button>
+      <as-button disabled type="success">按钮</as-button>
+      <as-button disabled type="info">按钮</as-button>
+      <as-button disabled type="warning">按钮</as-button>
+      <as-button disabled type="danger">按钮</as-button>
     </div>
   </div>
 </template>
@@ -50,7 +60,11 @@
 <script>
 
 export default {
-
+  methods: {
+    aclick() {
+      console.log(111);
+    }
+  }
 }
 </script>
 

@@ -1,13 +1,22 @@
 <template>
-  <button class="as-button" :class="[`as-button--${type}`, {
-      'is-plain': plain,
-      'is-round': round,
-      'is-circle': circle
-  }]">
-    <!-- 传文字 -->
-    <i v-if="icon" :class="icon"></i>
-    <!-- 传图标 -->
-    <span><slot></slot></span>
+  <button class="as-button" 
+          :class="[`as-button--${type}`, {
+                    'is-plain': plain,
+                    'is-round': round,
+                    'is-circle': circle,
+                    'is-disabled': disabled
+          }]"
+
+          @click="handleClick"
+  >
+    
+    <!-- 图标 -->
+    <i v-if="icon" :class="`as-icon-${icon}`"></i>
+    
+    <!-- 文字 -->
+    <!-- 如果没有传入文本插槽，则不显示span内容 -->
+    <span v-if="$slots.default"><slot></slot></span>
+
   </button>
 </template>
 
@@ -21,25 +30,43 @@ export default {
             type: String,
             default: 'default'
         },
+        // 是否是朴素按钮
         plain: { 
             type: Boolean, // 由于是布尔值，用对象来控制是最简单的
             default: false
         },
+        // 是否是圆弧的按钮
         round: {
             type: Boolean,
             default: false
         },
+        // 是否是圆形的按钮
         circle: {
             type: Boolean,
             default: false
         },
+        // 图标按钮
         icon: {
             type: String,
             default: ''
+        },
+        // 禁用按钮
+        disabled: {
+          type: Boolean,
+          default: false
         }
     },
     created() {
-        console.log(this.type);
+        // console.log(this.type);
+        // console.log(this.$slots.default);
+    },
+    mounted() {
+      console.log(this.$slots.default);
+    },
+    methods: {
+      handleClick (e) {
+        this.$emit('click', e);
+      }
     }
 }
 </script>
@@ -49,8 +76,8 @@ export default {
 
 .as-button {
     display: inline-block;
-    line-height: 1;
-    white-space: nowrap;
+    line-height: 1; // 根据该元素的本身的字体大小
+    white-space: nowrap; // 定义元素内的空白怎么处理： 只保留一个空白，文本不会换行，会在同一行上继续，直到遇到br标签为止
     cursor: pointer;
     background: #fff;
     border: 1px solid #dcdfe6;
@@ -67,7 +94,6 @@ export default {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-
     padding: 12px 20px;
     font-size: 14px;
     border-radius: 4px;
@@ -79,9 +105,9 @@ export default {
     }
 }
 
-
 .as-button {
- &--primary {
+  // 原色按钮
+  &--primary {
     color: #fff;
     background-color: #409eff;
     border-color: #409eff;
@@ -103,6 +129,7 @@ export default {
       }
     }
   }
+  // 成功按钮
   &--success {
     color: #fff;
     background-color: #67c23a;
@@ -125,6 +152,7 @@ export default {
       }
     }
   }
+  // 信息按钮
   &--info {
     color: #fff;
     background-color: #909399;
@@ -147,6 +175,7 @@ export default {
       }
     }
   }
+  // 警告按钮
   &--warning {
     color: #fff;
     background-color: #e6a23c;
@@ -169,6 +198,7 @@ export default {
       }
     }
   }
+  // 危险按钮
   &--danger {
     color: #fff;
     background-color: #f56c6c;
@@ -179,9 +209,20 @@ export default {
       border-color: #f78989;
       color: #fff;
     }
+    &.is-plain{
+      color: #f56c6c;
+      background: #fbc4c4;
+      &:hover,
+      &:focus{
+        background: #f56c6c;
+        border-color: #f56c6c;
+        color: #fff;
+      } 
+    }
   }  
 }
 
+// 椭圆角按钮
 .as-button.is-round {
     border-radius: 20px;
     padding: 12px 23px;
@@ -193,6 +234,15 @@ export default {
     padding: 12px;
 }
 
+// 相邻兄弟选择器
+.as-button [class*=as-icon-] + span {
+  margin-left: 5px;
+}
+
+// 禁用按钮
+.as-button.is-disabled {
+  cursor: no-drop;
+}
 
 </style>
 
