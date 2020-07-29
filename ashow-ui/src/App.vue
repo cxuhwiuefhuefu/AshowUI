@@ -52,11 +52,35 @@
     </div> -->
 
 
+
+
     <!-- 弹出框 -->
-    <as-dialog></as-dialog>
+    <!-- <as-dialog visible title="溫馨提示">
+      <template v-slot:title>
+        <h3 style="color: red">我是标题</h3>
+      </template>
+    </as-dialog> -->
+
+    <!-- <as-dialog visible width="80%" top="200px"></as-dialog> -->
+
+    <as-button type="primary" @click="visible=true" >按钮</as-button>
+    <as-dialog :visible.sync="visible">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+      <template v-slot:footer>
+        <div>
+          <as-button type="primary" @click="visible=false">确定</as-button>
+          <as-button @click="visible=false">取消</as-button>
+        </div>
+      </template>
+    </as-dialog>
 
   </div>
 </template>
+
 
 <script>
 
