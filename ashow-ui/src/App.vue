@@ -63,7 +63,7 @@
 
     <!-- <as-dialog visible width="80%" top="200px"></as-dialog> -->
 
-    <as-button type="primary" @click="visible=true" >按钮</as-button>
+    <!-- <as-button type="primary" @click="visible=true" >按钮</as-button>
     <as-dialog :visible.sync="visible">
       <ul>
         <li>1</li>
@@ -76,7 +76,19 @@
           <as-button @click="visible=false">取消</as-button>
         </div>
       </template>
-    </as-dialog>
+    </as-dialog> -->
+
+
+
+
+    <!-- input组件 -->
+    <!-- <div type="as-class">
+      <as-input placeholder="请输入用户名" v-model="username" clearable></as-input>
+      <as-input placeholder="请输入用户名" type="password" v-model="username" showPassword></as-input>
+    </div> -->
+
+    
+
 
   </div>
 </template>
@@ -85,6 +97,11 @@
 <script>
 
 export default {
+  data () {
+    return {
+      username: 'cmh'
+    }
+  },
   methods: {
     aclick() {
       console.log(111);
@@ -105,4 +122,9 @@ export default {
 }
 
 
+#app {
+  .as-input {
+    width: 180px;
+  }
+}
 </style>
