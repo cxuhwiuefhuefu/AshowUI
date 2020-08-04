@@ -87,6 +87,15 @@
       <as-input placeholder="请输入用户名" type="password" v-model="username" showPassword></as-input>
     </div> -->
 
+
+
+
+    <!-- wsitch组件 -->
+    <as-switch v-model="active"></as-switch>
+    <as-switch v-model="active"
+               active-color="red"
+               inactive-color="green"
+               name="username"></as-switch>
     
 
 
@@ -99,7 +108,8 @@
 export default {
   data () {
     return {
-      username: 'cmh'
+      username: 'cmh',
+      active: false
     }
   },
   methods: {
