@@ -91,12 +91,37 @@
 
 
     <!-- wsitch组件 -->
-    <as-switch v-model="active"></as-switch>
+    <!-- <as-switch v-model="active"></as-switch>
     <as-switch v-model="active"
-               active-color="red"
-               inactive-color="green"
-               name="username"></as-switch>
+               active-color="green"
+               inactive-color="red"
+               name="username"></as-switch> -->
     
+
+
+    <!-- <div ref="msgDiv">{{msg}}</div>
+    <div v-if="msg1">Message got outside $nextTick: {{msg1}}</div>
+    <div v-if="msg2">Message got inside $nextTick: {{msg2}}</div>
+    <div v-if="msg3">Message got outside $nextTick: {{msg3}}</div>
+    <button @click="changeMsg">
+      Change the Message
+    </button> -->
+
+
+
+
+    <!-- radio -->
+    <!-- <as-radio label="1" v-model="gender">男</as-radio>
+    <as-radio label="0" v-model="gender">女</as-radio> -->
+
+
+    <!-- radioGroup -->
+    <as-radio-group v-model="gender">
+      <as-radio label="1">男</as-radio>
+      <as-radio label="0">女</as-radio>
+    </as-radio-group>
+
+
 
 
   </div>
@@ -109,12 +134,29 @@ export default {
   data () {
     return {
       username: 'cmh',
-      active: false
+      active: false,
+
+      // msg: 'Hello Vue',
+      // msg1: '',
+      // msg2: '',
+      // msg3: ''
+
+      gender: "1"
     }
   },
   methods: {
     aclick() {
       console.log(111);
+    },
+
+    
+    changeMsg() {
+      this.msg = 'Hello world';
+      this.msg1 = this.$refs.msgDiv.innerHTML;
+      this.$nextTick(() => {
+        this.msg2 = this.$refs.msgDiv.innerHTML;
+      })
+      this.msg3 = this.$refs.msgDiv.innerHTML;
     }
   }
 }

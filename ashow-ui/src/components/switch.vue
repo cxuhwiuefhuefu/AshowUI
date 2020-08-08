@@ -40,7 +40,7 @@ export default {
             // 等待value发生了改变 再setColor
             // 数据修改后，等待我们的DOM更新，再去修改我们的按钮的颜色
             await this.$nextTick();
-            this.setColor()
+            this.setColor();
             // 点击的时候也修改checked属性
             this.$refs.input.checked = this.value;
         },
@@ -48,6 +48,7 @@ export default {
             // 修改开关的颜色
             if(this.activeColor || this.inactiveColor) {
                 var color = this.value ? this.activeColor : this.inactiveColor;
+                console.log(color, 111111)
                 this.$refs.core.style.borderColor = color;
                 this.$refs.core.style.backgroundColor = color;
             }    
@@ -73,12 +74,6 @@ export default {
     font-size: 14px;
     line-height: 20px;
     vertical-align: middle;
-    .as-switch_input {
-        width: 0;
-        height: 0;
-        opacity: 0;
-        margin: 0;  
-    }
     .as-switch_core {
         margin: 0;
         display: inline-block;
@@ -118,7 +113,7 @@ export default {
 }
 
 // 隐藏input标签
-.as-swicth_input {
+.as-switch_input {
     position: absolute;
     width: 0;
     height: 0;

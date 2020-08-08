@@ -9,7 +9,10 @@ import AsDialog from './components/dialog.vue'
 import AsInput from './components/input.vue'
 // 引入切换组件
 import AsSwitch from './components/switch.vue'
-
+// 引入单选框组件
+import AsRadio from './components/radio.vue'
+// 引入单选框组组件
+import AsRadioGroup from './components/radio-group.vue'
 
 // 全局引入图标文件
 import './assets/fonts/iconfont.scss'
@@ -22,6 +25,8 @@ Vue.component(AsButton.name, AsButton)
 Vue.component(AsDialog.name, AsDialog)
 Vue.component(AsInput.name, AsInput)
 Vue.component(AsSwitch.name, AsSwitch)
+Vue.component(AsRadio.name, AsRadio)
+Vue.component(AsRadioGroup.name, AsRadioGroup)
 
 
 new Vue({
